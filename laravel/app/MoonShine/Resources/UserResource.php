@@ -10,6 +10,7 @@ use App\Models\User;
 use MoonShine\Resources\ModelResource;
 use \MoonShine\Fields\Text;
 use MoonShine\Fields\Date;
+use MoonShine\Fields\Switcher;
 use MoonShine\Decorations\Block;
 use MoonShine\Fields\ID;
 use MoonShine\Fields\Field;
@@ -33,7 +34,7 @@ class UserResource extends ModelResource
                 ID::make()->sortable(),
                 Date::make("Date In", "date_in"),
                 Date::make("Date Out", "date_out"),
-                Text::make("Purchase", "purchase")->nullable(),
+                Switcher::make('Purchase', 'purchase'),
                 \MoonShine\Fields\Relationships\BelongsTo::make("shop", resource: new ShopResource()),
             ]),
         ];
@@ -50,7 +51,6 @@ class UserResource extends ModelResource
         return [
             "date_in" => ["required", "date"],
             "date_out" => ["required", "date"],
-            "purchase" => ["nullable", "string", "min:5", "max:255"],
         ];
     }
 }

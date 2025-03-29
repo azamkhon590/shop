@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('moonshine_user', function (Blueprint $table) {
+        Schema::table('moonshine_users', function (Blueprint $table) {
             $table->string("full_name")->nullable();
             $table->string("job_title")->nullable();
             $table->date("work_start")->nullable();
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropColums("moonshine_user", ["full_name", "job_title", "work_start","status","work_days"]);
+        Schema::dropColumn("moonshine_users", ["full_name", "job_title", "work_start","status","work_days"]);
     }
 };

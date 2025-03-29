@@ -11,7 +11,7 @@ use MoonShine\Resources\ModelResource;
 use MoonShine\Fields\Date;
 use MoonShine\Models\MoonshineUser;
 use MoonShine\Models\MoonShineUserResource;
-use \MoonShine\Fields\RelationShips\BelongsToMany;
+use \MoonShine\Fields\RelationShips\BelongsTo;
 use MoonShine\Decorations\Block;
 use MoonShine\Fields\ID;
 use MoonShine\Fields\Field;
@@ -26,6 +26,8 @@ class MoonshineUserWorkResource extends ModelResource
 
     protected string $title = 'MoonshineUserWorks';
 
+    
+
     /**
      * @return list<MoonShineComponent|Field>
      */
@@ -36,7 +38,7 @@ class MoonshineUserWorkResource extends ModelResource
                 ID::make()->sortable(),
                 Date::make("Date In", "date_in"),
                 Date::make("Date Out", "date_out"),
-                \MoonShine\Fields\Relationships\BelongsTo::make("moonshineUser", resource: new MoonshineUserResources()),
+                BelongsTo::make("Users","moonshineUser", resource: new \MoonShine\Resources\MoonShineUserResource()),
             ]),
         ];
     }

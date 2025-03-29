@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->date('date_in');
             $table->date('date_out');
-            $table->foreignIdFor(App\Models\MoonshineUser::class)->nullable();
-            $table->timestamps();
+            $table->foreignIdFor(MoonShine\Models\MoonshineUser::class)->nullable();
         });
     }
 

@@ -19,7 +19,6 @@ class MoonshineUser extends Model
     ];
 
     protected $casts = [
-        "work_days" => "string",
         "work_start" => "datetime",
     ];
 

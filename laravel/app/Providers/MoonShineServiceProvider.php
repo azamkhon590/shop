@@ -56,7 +56,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 
             MenuItem::make('Work', new \App\MoonShine\Resources\MoonshineUserWorkResource()),
 
-            MenuItem::make('Admin', new \App\MoonShine\Resources\MoonshineUserResources()),
+            // MenuItem::make('Admin', new \App\MoonShine\Resources\MoonshineUserResources()),
 
             MenuItem::make('Documentation', 'https://moonshine-laravel.com/docs')
                 ->badge(fn() => 'Check')

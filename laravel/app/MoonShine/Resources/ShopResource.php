@@ -23,6 +23,8 @@ class ShopResource extends ModelResource
 
     protected string $title = 'Shops';
 
+    protected string $column = 'name';
+
     /**
      * @return list<MoonShineComponent|Field>
      */
