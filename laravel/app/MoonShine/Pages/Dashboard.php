@@ -8,7 +8,6 @@ use MoonShine\Pages\Page;
 use MoonShine\Components\MoonShineComponent;
 use MoonShine\Metrics\ValueMetric;
 use App\Models\User;
-use App\Models\MoonshineUser;
 use App\Models\MoonshineUserWork;
 use App\Models\Shop;
 
@@ -35,14 +34,12 @@ class Dashboard extends Page
     public function components(): array
 	{
 		return [
-            ValueMetric::make('MoonshineUsers')
-            ->value(MoonshineUser::count()),
-            ValueMetric::make('Works')
-            ->value(MoonshineUserWork::count()),
-            ValueMetric::make('Shops')
-            ->value(Shop::count()),
-            ValueMetric::make('Users')
+            ValueMetric::make('Orders')
             ->value(User::count()),
+            ValueMetric::make('Orders')
+            ->value(MoonshineUserWork::count()),
+            ValueMetric::make('Orders')
+            ->value(Shop::count()),
         ];
 	}
 }

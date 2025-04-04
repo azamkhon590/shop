@@ -20,7 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'date_in',
         'date_out',
-        'purchase',
+        'is_purchase',
         'shop_id',
     ];
 

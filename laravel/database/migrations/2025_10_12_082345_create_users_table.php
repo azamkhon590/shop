@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->date('date_in');
             $table->date('date_out');
-            $table->switcher('purchase');
+            $table->boolean('is_purchase')->default(false);
             $table->foreignIdFor(App\Models\Shop::class)->nullable();
             $table->timestamps();
         });

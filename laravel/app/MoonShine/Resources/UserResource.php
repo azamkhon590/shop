@@ -34,7 +34,7 @@ class UserResource extends ModelResource
                 ID::make()->sortable(),
                 Date::make("Date In", "date_in"),
                 Date::make("Date Out", "date_out"),
-                Switcher::make('Purchase', 'purchase'),
+                Switcher::make('Purchase', 'is_purchase'),
                 \MoonShine\Fields\Relationships\BelongsTo::make("shop", resource: new ShopResource()),
             ]),
         ];
