@@ -34,11 +34,11 @@ class Dashboard extends Page
     public function components(): array
 	{
 		return [
-            ValueMetric::make('Orders')
+            ValueMetric::make('Users')
             ->value(User::count()),
-            ValueMetric::make('Orders')
+            ValueMetric::make('Work')
             ->value(MoonshineUserWork::count()),
-            ValueMetric::make('Orders')
+            ValueMetric::make('Shop')
             ->value(Shop::count()),
         ];
 	}
