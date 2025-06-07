@@ -39,30 +39,10 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
     protected function menu(): array
     {
         return [
-            MenuGroup::make(static fn() => __('moonshine::ui.resource.system'), [
-                MenuItem::make(
-                    static fn() => __('moonshine::ui.resource.admins_title'),
-                    new MoonShineUserResource()
-                ),
-                MenuItem::make(
-                    static fn() => __('moonshine::ui.resource.role_title'),
-                    new MoonShineUserRoleResource()
-                ),
-            ]),
-
-            MenuItem::make('Shops', new \App\MoonShine\Resources\ShopResource()),
-            
-            MenuItem::make('Client', new \App\MoonShine\Resources\UserResource()),
-
-            MenuItem::make('Work', new \App\MoonShine\Resources\MoonshineUserWorkResource()),
-
-            // MenuItem::make('Admin', new \App\MoonShine\Resources\MoonshineUserResources()),
-
-            MenuItem::make('Documentation', 'https://moonshine-laravel.com/docs')
-                ->badge(fn() => 'Check')
-                ->blank(),
-
+           
         ];
+
+        
     }
 
     /**
